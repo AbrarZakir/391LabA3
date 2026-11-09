@@ -70,7 +70,6 @@ try {
 } catch (DomainException $error) {
     $message = $error->getMessage();
 } catch (PDOException $error) {
-    // The database also catches duplicates submitted to different mechanics at the same time.
     if ((int) ($error->errorInfo[1] ?? 0) === 1062) {
         $message = 'You already have an appointment on this date.';
     } else {

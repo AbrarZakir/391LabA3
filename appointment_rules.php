@@ -9,7 +9,6 @@ function isAppointmentDate(mixed $date): bool
 
 function lockMechanic(PDO $pdo, int $mechanicId): void
 {
-    // Hold this lock through the capacity check and write for both booking flows.
     $lock = $pdo->prepare('SELECT id FROM mechanics WHERE id = ? FOR UPDATE');
     $lock->execute([$mechanicId]);
 

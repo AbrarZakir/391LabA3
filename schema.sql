@@ -1,4 +1,3 @@
--- Select an empty project database before importing this file.
 CREATE TABLE mechanics (
     id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL
